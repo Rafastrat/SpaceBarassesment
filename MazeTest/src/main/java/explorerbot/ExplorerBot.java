@@ -6,6 +6,7 @@ import maze.Maze;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import java.util.Stack;
 
 public class ExplorerBot {
 
@@ -30,8 +31,10 @@ public class ExplorerBot {
     public String printVisitedCoordsByExplorerBot() {
         Coordinate[][] map = maze.getCoordinate();
         StringBuilder result = new StringBuilder(maze.getWidth() * maze.getHeight());
+
         for (int row = 0; row < maze.getHeight(); row++) {
             for (int col = 0; col < maze.getWidth(); col++) {
+
 
                 if (map[row][col].isBlocked()) {
                     result.append('X');
@@ -40,7 +43,7 @@ public class ExplorerBot {
                 } else if (map[row][col].isGoal()) {
                     result.append('F');
                 } else if (maze.getPath().isOnPath(maze.getCoordinate(row, col))) {
-                    result.append('.');
+                    result.append('*');
                 } else {
                     result.append(' ');
                 }
@@ -113,5 +116,12 @@ public class ExplorerBot {
             }
         }
         return clearCoordinates;
+    }
+
+    public void movementDirection() {
+        Stack<Coordinate> path = maze.getPath().getPaths();
+        for (Coordinate c : path) {
+            System.out.println(c.toString());
+        }
     }
 }

@@ -15,12 +15,12 @@ public class Path {
         return this.backwardsStepsCount;
     }
 
-    public boolean isOnPath(Coordinate square) {
-        return path.contains(square);
+    public boolean isOnPath(Coordinate coordinate) {
+        return path.contains(coordinate);
     }
 
-    public void addPath(Coordinate square) {
-        path.push(square);
+    public void addPath(Coordinate coordinate) {
+        path.push(coordinate);
     }
 
     public Stack<Coordinate> getPaths() {

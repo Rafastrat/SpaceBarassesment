@@ -2,7 +2,7 @@ import components.CoordinateStatus;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class SquareStateTest {
+public class CoordinateStatusTest {
 
     @Test
     public void testGetSquareStateBySign() {

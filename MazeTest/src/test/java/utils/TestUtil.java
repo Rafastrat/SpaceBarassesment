@@ -1,3 +1,5 @@
+package utils;
+
 import components.Coordinate;
 import components.CoordinateStatus;
 

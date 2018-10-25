@@ -19,40 +19,24 @@ public class MazeFactoryTest {
         factory.buildMazeMap(new File("src/test"));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testFactoryEmptyFileInput() {
-        try {
-            factory.buildMazeMap(new File("src/test/resources/empty.txt"));
-        } catch (IllegalArgumentException iae) {
-            Assert.assertTrue(iae.getMessage().contains("Invalid input file - empty lines"));
-        }
+        factory.buildMazeMap(new File("src/test/resources/empty.txt"));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testFactoryBadFormattedFileInput() {
-        try {
-            factory.buildMazeMap(new File("src/test/resources/badcontent.txt"));
-        } catch (IllegalArgumentException iae) {
-            Assert.assertTrue(iae.getMessage().contains("line 7 wrong length 14, should be 15"));
-        }
+        factory.buildMazeMap(new File("src/test/resources/badcontent.txt"));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testFactoryOneStart() {
-        try {
-            factory.buildMazeMap(new File("src/test/resources/multiple-starts.txt"));
-        } catch (IllegalArgumentException iae) {
-            Assert.assertTrue(iae.getMessage().contains("Invalid map data - should have one and only one Start point 'S' and one and only one exit 'F'"));
-        }
+        factory.buildMazeMap(new File("src/test/resources/multiple-starts.txt"));
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testFactoryOneExit() {
-        try {
-            factory.buildMazeMap(new File("src/test/resources/multiple-exits.txt"));
-        } catch (IllegalArgumentException iae) {
-            Assert.assertTrue(iae.getMessage().contains("Invalid map data - should have one and only one Start point 'S' and one and only one exit 'F'"));
-        }
+        factory.buildMazeMap(new File("src/test/resources/multiple-exits.txt"));
     }
 
     @Test
