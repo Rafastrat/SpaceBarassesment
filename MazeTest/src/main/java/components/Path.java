@@ -23,6 +23,10 @@ public class Path {
         path.push(square);
     }
 
+    public Stack<Coordinate> getPaths() {
+        return path;
+    }
+
     public Coordinate getPreviousStep() {
         backwardsStepsCount++;
         if (!path.isEmpty()){
