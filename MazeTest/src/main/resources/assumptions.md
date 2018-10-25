@@ -4,9 +4,9 @@ Assumptions
 1) The bot can only move through white spaces
 2) The maze outer edges are composed just by blocked paths, so, the bot cannot run away
 3) The output will be presented through System library
-4) The bot only can move in axis per movement (no diagonal movements allowed)
+4) The bot only can move in one axis per movement (no diagonal movements allowed)
 5) The bot will choose randomly which direction to take when more than one available
-6) The bot can move forward and backwards if it reaches an endpoint (backwards is the only possible path)
+6) The bot can move backwards if it reaches an endpoint (backwards is the only possible path)
 
 Improvements
 ============
